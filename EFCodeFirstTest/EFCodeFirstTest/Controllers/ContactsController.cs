@@ -119,7 +119,8 @@ namespace EFCodeFirstTest.Controllers
         // get all companies from database
         private void SelectListItems()
         {
-            ViewBag.companies = new SelectList(_companyRepo.GetAll(), "Name", "Name");
+
+            ViewBag.companies = new SelectList(_companyRepo.GetAll(), "CompanyId", "Name");
         }
 
 

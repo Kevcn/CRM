@@ -22,6 +22,9 @@ namespace CrmModels
 
         public bool Favorite { get; set; }
 
+        [Display(Name="Company")]
+        public int CompanyId { get; set; }
+
         public virtual Company Company { get; set; }
 
        

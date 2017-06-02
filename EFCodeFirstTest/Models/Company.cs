@@ -17,8 +17,9 @@ namespace CrmModels
 
         public string Country { get; set; }
 
-        [Display(Name = "Location")]
         public string City { get; set; }
+
+        public virtual ICollection<Contact> Contacts { get; set; }
 
     }
 }
