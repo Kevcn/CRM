@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data.Entity;
-using Models;
+using CrmModels;
 
-namespace EFCodeFirstTest.DB_Connection
+namespace CrmDatabaseManagement
 {
     public class CrmEntities : DbContext
     {
