@@ -49,6 +49,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CrmEntities.cs" />
+    <Compile Include="Migrations\201706021046281_InitialCreate.cs" />
+    <Compile Include="Migrations\201706021046281_InitialCreate.Designer.cs">
+      <DependentUpon>201706021046281_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706021436485_initialmode.cs" />
+    <Compile Include="Migrations\201706021436485_initialmode.Designer.cs">
+      <DependentUpon>201706021436485_initialmode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706021459299_addedCompanyIdField.cs" />
+    <Compile Include="Migrations\201706021459299_addedCompanyIdField.Designer.cs">
+      <DependentUpon>201706021459299_addedCompanyIdField.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +73,17 @@
       <Project>{3b9e93f6-9bdf-4710-9448-deabdf1bf35d}</Project>
       <Name>CrmModels</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706021046281_InitialCreate.resx">
+      <DependentUpon>201706021046281_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706021436485_initialmode.resx">
+      <DependentUpon>201706021436485_initialmode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706021459299_addedCompanyIdField.resx">
+      <DependentUpon>201706021459299_addedCompanyIdField.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
