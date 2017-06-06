@@ -1,0 +1,12 @@
+.jumbotron {
+  background-image: url("contact-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 300px;
+}
+
+
+.jumbotron h2{
+  color: white;
+}

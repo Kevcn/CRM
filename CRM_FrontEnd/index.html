@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="bootstrap-datapicker3.min.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="container">
+
+
+    <div class="jumbotron">
+      <h2 style="">Customer Relationship Management</h2>
+      <a class="btn btn-primary btn-lg pull-right" href="#" role="button">Sign Up Now</a>
+      <a class="btn btn-primary btn-lg pull-right" href="#" role="button">Register</a>
+    </div>
+
+
+        <div class="row">
+            <div class='col-sm-6'>
+                <div class="form-group">
+                    <div class='input-group date' id='datetimepicker1'>
+                        <input type='text' class="form-control" />
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="bootstrap-datepicker.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datepicker();
+        });
+    </script>
+  </body>
+</html>

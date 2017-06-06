@@ -9,15 +9,19 @@ namespace CRM.Controllers
 {
     public class ContactController : Controller
     {
+        //CrmEntities db = new CrmEntities();
+
+
         // objects for access repositories. 
-        private ContactRepository contactRepo = null;
+        private ContactRepository contactRepo = new ContactRepository();
 
 
 
         // GET: Contact
         public ActionResult Index()
         {
-            return View();
+
+            return View(contactRepo.getAllContact());
         }
 
         // Display contacts on Contact home page.
@@ -29,7 +33,12 @@ namespace CRM.Controllers
             return View(allContacts);
         }
 
+        public ActionResult ContactDetail(string name)
+        {
+            var contact = contactRepo.getContact(name);
 
+            return View(contact);
+        }
 
     }
 }

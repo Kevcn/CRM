@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -7,12 +7,12 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{98CDDA91-12F0-4E41-AB63-1AA2E6E5DB0A}</ProjectGuid>
+    <ProjectGuid>{BA9E5548-11F6-412D-9F9D-0C0FE0FCFB7B}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CRM</RootNamespace>
-    <AssemblyName>CRM</AssemblyName>
+    <RootNamespace>EFCodeFirstTest</RootNamespace>
+    <AssemblyName>EFCodeFirstTest</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -63,11 +63,11 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
     <Reference Include="System.Web.Razor">
       <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Reference Include="System.Web.Webpages">
       <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
     </Reference>
@@ -88,34 +88,43 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Web.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Crm\Create.cshtml" />
+    <Content Include="Views\Crm\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\ContactController.cs" />
-    <Compile Include="CRM_DB\CrmEntities.cs" />
-    <Compile Include="Data\ContactRepository.cs" />
+    <Compile Include="Controllers\CrmController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705261008199_InitialModel.cs" />
-    <Compile Include="Migrations\201705261008199_InitialModel.Designer.cs">
-      <DependentUpon>201705261008199_InitialModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Company.cs" />
-    <Compile Include="Models\Contact.cs" />
-    <Compile Include="Models\Place.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Data\ContactRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
-    <Content Include="Views\Contact\Contact.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -127,9 +136,14 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705261008199_InitialModel.resx">
-      <DependentUpon>201705261008199_InitialModel.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\DatabaseManagement\CrmDatabaseManagement.csproj">
+      <Project>{a5f0c1dc-b54d-4d8f-91cb-f534480638e5}</Project>
+      <Name>CrmDatabaseManagement</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\CrmModels.csproj">
+      <Project>{3b9e93f6-9bdf-4710-9448-deabdf1bf35d}</Project>
+      <Name>CrmModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -144,9 +158,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>62401</DevelopmentServerPort>
+          <DevelopmentServerPort>64270</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:62401/</IISUrl>
+          <IISUrl>http://localhost:64270/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

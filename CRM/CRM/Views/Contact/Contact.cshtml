@@ -1,0 +1,27 @@
+﻿@using CRM.Models
+@model List<Contact>
+
+@{
+    ViewBag.title = "this is the title";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <ul>
+            @foreach (var contact in Model)
+            {
+                <li>
+                    Name: @contact.Name, Company: @contact.Company, Phone: @contact.Phone
+                </li>
+            }
+        </ul>
+    </div>
+</body>
+</html>
